@@ -1,0 +1,29 @@
+---
+interface Props {
+  href: string;
+  icon: string;
+  text: string;
+  loading?: "lazy" | "eager";
+}
+
+const { href, icon, text, loading } = Astro.props;
+---
+
+<a
+  class="flex justify-start items-center pt-3"
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span
+    class="bg-white/5 border border-white/10 border-gray-400 rounded-lg flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs md:text-base text-white/90 transition hover:scale-110 hover:bg-white/10"
+  >
+    <img
+      class="inline-block w-6 h-6 mr-2 align-middle"
+      src={icon}
+      alt={text + " icon"}
+      loading={loading}
+    />
+    {text}
+  </span>
+</a>

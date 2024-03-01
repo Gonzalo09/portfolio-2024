@@ -1,0 +1,208 @@
+---
+import { Image } from "astro:assets";
+import BotonConIcono from "../components/BotonConIcono.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-amber-600 text-white",
+    icon: "/react.svg",
+  },
+  MUI: {
+    name: "Material-UI",
+    class: "bg-[#0081CB] text-white",
+    icon: "/material-ui.svg",
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-[#339933] text-white",
+    icon: "/nodejs.svg",
+  },
+  SEQUELIZE: {
+    name: "Sequelize",
+    class: "bg-[#52B0B0] text-white",
+    icon: "/sequelize.svg",
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: "/postgresql.svg",
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-[#639] text-white",
+    icon: "/supabase.svg",
+  },
+  SOCKETIO: {
+    name: "Socket.io",
+    class: "bg-[#738FA7] text-white",
+    icon: "/socketio.svg",
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#E34F26] text-white",
+    icon: "/html5.svg",
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#1572B6] text-white",
+    icon: "/css.svg",
+  },
+};
+const PROYECTOS = [
+  {
+    title: "Bolsa de empleo UNAHUR",
+    description:
+      "Bolsa de empleo para la comunidad de la Universidad Nacional de Hurlingham. Esta aplicación permite a los usuarios registrarse y postularse a las ofertas de trabajo publicadas por las empresas. El administrador puede gestionar las ofertas de trabajo y los datos de los usuarios.",
+    githubFront:
+      "https://github.com/PPS-2023c2-Grupo-3/comunidad-de-trabajo-front-end",
+    githubBack:
+      "https://github.com/PPS-2023c2-Grupo-3/comunidad-backend-v3/tree/dev",
+    image: "/comunidad_de_trabajo.webp",
+    tags: [
+      TAGS.REACT,
+      TAGS.MUI,
+      TAGS.NODE,
+      TAGS.SEQUELIZE,
+      TAGS.POSTGRESQL,
+      TAGS.SUPABASE,
+    ],
+  },
+  {
+    title: "Equivalencias UNAHUR",
+    description:
+      "Gestor de pedidos de equivalencias para la Universidad Nacional de Hurlingham al cual se le incorporo la funcionalidad de chat para poder comunicarse con los alumnos.",
+    githubFront:
+      "https://github.com/DesApp-2023c1-Grupo-3/equivalencias-front-end/tree/dev",
+    githubBack:
+      "https://github.com/DesApp-2023c1-Grupo-3/equivalencias-back-end/tree/dev",
+    image: "/chat_equivalencias.webp",
+    tags: [
+      TAGS.REACT,
+      TAGS.MUI,
+      TAGS.NODE,
+      TAGS.SEQUELIZE,
+      TAGS.POSTGRESQL,
+      TAGS.SOCKETIO,
+    ],
+  },
+  {
+    title: "Rick and Morty App",
+    description:
+      "Rick and Morty App es una aplicación web que permite visualizar información sobre la serie animada Rick and Morty. En esta encontrarás información sobre los personajes, episodios y locaciones de la famosa serie.",
+    link: "https://rick-and-morty-series-app.netlify.app/",
+    github: "https://github.com/Gonzalo09/Rick-and-Morty-App",
+    image: "/rick_and_morty.webp",
+    tags: [TAGS.REACT, TAGS.MUI, TAGS.HTML, TAGS.CSS],
+  },
+  {
+    title: "Clima Argentina",
+    description:
+      "Aplicación web que permite visualizar las condiciones climáticas de cualquier ciudad de Argentina. Además de proporcionar datos del clima actual, como visibilidad, humedad, presión, etc., también podrás consultar el pronóstico extendido de 3 días.",
+    link: "https://clima-argentina.vercel.app/",
+    github: "https://github.com/Gonzalo09/clima",
+    image: "/clima.webp",
+    tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+  },
+];
+---
+
+<section id="proyectos">
+  <div class="max-w-screen-xl px-6 py-8 mx-auto lg:px-6 sm:py-12 lg:py-14">
+    <h2
+      class="text-left pb-16 text-4xl font-extrabold leading-tight tracking-tight text-white"
+    >
+      Proyectos
+    </h2>
+    <div class="flex flex-col gap-y-16">
+      {
+        PROYECTOS.map(
+          ({
+            image,
+            title,
+            description,
+            tags,
+            link,
+            github,
+            githubFront,
+            githubBack,
+          }) => (
+            <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+              <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                  <Image
+                    alt={title}
+                    class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-125"
+                    src={image}
+                    height={224}
+                    width={400}
+                    loading="eager"
+                  />
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
+                <div class="mt-2">
+                  <ul class="flex flex-wrap mb-2 gap-x-2">
+                    {tags.map((tag) => (
+                      <li class="mb-2">
+                        <span
+                          class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                        >
+                          <img
+                            src={tag.icon}
+                            alt={tag.name + " " + title}
+                            class="w-4 h-4"
+                            loading="lazy"
+                          />
+                          {tag.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p class="mt-2 text-gray-400">{description}</p>
+                  <footer class="flex items-end justify-start mt-4 gap-x-4">
+                    {github && (
+                      <BotonConIcono
+                        href={github}
+                        icon="/github.svg"
+                        text="Código"
+                        loading="lazy"
+                      />
+                    )}
+                    {githubFront && (
+                      <BotonConIcono
+                        href={githubFront}
+                        icon="/github.svg"
+                        text="Front"
+                        loading="lazy"
+                      />
+                    )}
+                    {githubBack && (
+                      <BotonConIcono
+                        href={githubBack}
+                        icon="/github.svg"
+                        text="Back"
+                        loading="lazy"
+                      />
+                    )}
+                    {link && (
+                      <BotonConIcono
+                        href={link}
+                        icon="/link.svg"
+                        text="Demo"
+                        loading="lazy"
+                      />
+                    )}
+                  </footer>
+                </div>
+              </div>
+            </article>
+          )
+        )
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+const { text } = Astro.props;
+---
+
+<h1 class="overflow-hidden text-2xl font-bold text-white kode-mono">
+  {
+    text.match(/./gu)!.map((char: string, index: number) => (
+      <span
+        class="animate-text-reveal inline-block [animation-fill-mode:backwards]"
+        style={{ animationDelay: `${index * 0.05}s` }}
+      >
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ))
+  }
+</h1>
