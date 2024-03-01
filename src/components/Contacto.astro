@@ -16,7 +16,7 @@
         .then(
           function (response) {
             console.log("SUCCESS!", response.status, response.text);
-            form.reset();
+            (form as HTMLFormElement).reset();
             alert("Mensaje enviado correctamente");
           },
           function (error) {
