@@ -5,47 +5,47 @@ import BotonConIcono from "../components/BotonConIcono.astro";
 const TAGS = {
   REACT: {
     name: "React",
-    class: "bg-amber-600 text-white",
+    class: "bg-amber-600/70 text-white",
     icon: "/icons/react.svg",
   },
   MUI: {
     name: "Material-UI",
-    class: "bg-[#0081CB] text-white",
+    class: "bg-[#0081CB]/70 text-white",
     icon: "/icons/material-ui.svg",
   },
   NODE: {
     name: "Node.js",
-    class: "bg-[#339933] text-white",
+    class: "bg-[#339933]/70 text-white",
     icon: "/icons/nodejs.svg",
   },
   SEQUELIZE: {
     name: "Sequelize",
-    class: "bg-[#52B0B0] text-white",
+    class: "bg-[#52B0B0]/50 text-white",
     icon: "/icons/sequelize.svg",
   },
   POSTGRESQL: {
     name: "PostgreSQL",
-    class: "bg-[#336791] text-white",
+    class: "bg-[#336791]/70 text-white",
     icon: "/icons/postgresql.svg",
   },
   SUPABASE: {
     name: "Supabase",
-    class: "bg-[#639] text-white",
+    class: "bg-[#639]/70 text-white",
     icon: "/icons/supabase.svg",
   },
   SOCKETIO: {
     name: "Socket.io",
-    class: "bg-[#738FA7] text-white",
+    class: "bg-[#738FA7]/70 text-white",
     icon: "/icons/socketio.svg",
   },
   HTML: {
     name: "HTML",
-    class: "bg-[#E34F26] text-white",
+    class: "bg-[#E34F26]/70 text-white",
     icon: "/icons/html5.svg",
   },
   CSS: {
     name: "CSS",
-    class: "bg-[#1572B6] text-white",
+    class: "bg-[#1572B6]/70 text-white",
     icon: "/icons/css.svg",
   },
 };
@@ -132,11 +132,12 @@ const PROYECTOS = [
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                   <Image
                     alt={title}
-                    class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-125"
+                    class="object-cover object-top w-full h-full transition duration-500 md:scale-110 md:group-hover:scale-125 aspect-video"
                     src={image}
                     height={224}
                     width={400}
                     loading="eager"
+                    title={title}
                   />
                 </div>
               </div>
