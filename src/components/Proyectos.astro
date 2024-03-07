@@ -6,47 +6,47 @@ const TAGS = {
   REACT: {
     name: "React",
     class: "bg-amber-600 text-white",
-    icon: "/react.svg",
+    icon: "/icons/react.svg",
   },
   MUI: {
     name: "Material-UI",
     class: "bg-[#0081CB] text-white",
-    icon: "/material-ui.svg",
+    icon: "/icons/material-ui.svg",
   },
   NODE: {
     name: "Node.js",
     class: "bg-[#339933] text-white",
-    icon: "/nodejs.svg",
+    icon: "/icons/nodejs.svg",
   },
   SEQUELIZE: {
     name: "Sequelize",
     class: "bg-[#52B0B0] text-white",
-    icon: "/sequelize.svg",
+    icon: "/icons/sequelize.svg",
   },
   POSTGRESQL: {
     name: "PostgreSQL",
     class: "bg-[#336791] text-white",
-    icon: "/postgresql.svg",
+    icon: "/icons/postgresql.svg",
   },
   SUPABASE: {
     name: "Supabase",
     class: "bg-[#639] text-white",
-    icon: "/supabase.svg",
+    icon: "/icons/supabase.svg",
   },
   SOCKETIO: {
     name: "Socket.io",
     class: "bg-[#738FA7] text-white",
-    icon: "/socketio.svg",
+    icon: "/icons/socketio.svg",
   },
   HTML: {
     name: "HTML",
     class: "bg-[#E34F26] text-white",
-    icon: "/html5.svg",
+    icon: "/icons/html5.svg",
   },
   CSS: {
     name: "CSS",
     class: "bg-[#1572B6] text-white",
-    icon: "/css.svg",
+    icon: "/icons/css.svg",
   },
 };
 const PROYECTOS = [
@@ -58,7 +58,7 @@ const PROYECTOS = [
       "https://github.com/PPS-2023c2-Grupo-3/comunidad-de-trabajo-front-end",
     githubBack:
       "https://github.com/PPS-2023c2-Grupo-3/comunidad-backend-v3/tree/dev",
-    image: "/comunidad_de_trabajo.webp",
+    image: "/images/comunidad_de_trabajo.webp",
     tags: [
       TAGS.REACT,
       TAGS.MUI,
@@ -76,7 +76,7 @@ const PROYECTOS = [
       "https://github.com/DesApp-2023c1-Grupo-3/equivalencias-front-end/tree/dev",
     githubBack:
       "https://github.com/DesApp-2023c1-Grupo-3/equivalencias-back-end/tree/dev",
-    image: "/chat_equivalencias.webp",
+    image: "/images/chat_equivalencias.webp",
     tags: [
       TAGS.REACT,
       TAGS.MUI,
@@ -92,7 +92,7 @@ const PROYECTOS = [
       "Rick and Morty App es una aplicación web que permite visualizar información sobre la serie animada Rick and Morty. En esta encontrarás información sobre los personajes, episodios y locaciones de la famosa serie.",
     link: "https://rick-and-morty-series-app.netlify.app/",
     github: "https://github.com/Gonzalo09/Rick-and-Morty-App",
-    image: "/rick_and_morty.webp",
+    image: "/images/rick_and_morty.webp",
     tags: [TAGS.REACT, TAGS.MUI, TAGS.HTML, TAGS.CSS],
   },
   {
@@ -101,7 +101,7 @@ const PROYECTOS = [
       "Aplicación web que permite visualizar las condiciones climáticas de cualquier ciudad de Argentina. Además de proporcionar datos del clima actual, como visibilidad, humedad, presión, etc, también podrás consultar el pronóstico extendido de 3 días.",
     link: "https://clima-argentina.vercel.app/",
     github: "https://github.com/Gonzalo09/clima",
-    image: "/clima.webp",
+    image: "/images/clima.webp",
     tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
   },
 ];
@@ -167,7 +167,7 @@ const PROYECTOS = [
                     {github && (
                       <BotonConIcono
                         href={github}
-                        icon="/github.svg"
+                        icon="/icons/github.svg"
                         text="Código"
                         loading="lazy"
                       />
@@ -175,7 +175,7 @@ const PROYECTOS = [
                     {githubFront && (
                       <BotonConIcono
                         href={githubFront}
-                        icon="/github.svg"
+                        icon="/icons/github.svg"
                         text="Front"
                         loading="lazy"
                       />
@@ -183,7 +183,7 @@ const PROYECTOS = [
                     {githubBack && (
                       <BotonConIcono
                         href={githubBack}
-                        icon="/github.svg"
+                        icon="/icons/github.svg"
                         text="Back"
                         loading="lazy"
                       />
@@ -191,7 +191,7 @@ const PROYECTOS = [
                     {link && (
                       <BotonConIcono
                         href={link}
-                        icon="/link.svg"
+                        icon="/icons/link.svg"
                         text="Demo"
                         loading="lazy"
                       />
