@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import BotonConIcono from "../components/BotonConIcono.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const TAGS = {
   REACT: {
@@ -51,9 +55,8 @@ const TAGS = {
 };
 const PROYECTOS = [
   {
-    title: "Bolsa de empleo UNAHUR",
-    description:
-      "Bolsa de empleo para la comunidad de la Universidad Nacional de Hurlingham. Esta aplicación permite a los usuarios registrarse y postularse a las ofertas de trabajo publicadas por las empresas. El administrador puede gestionar las ofertas de trabajo y los datos de los usuarios.",
+    title: t("proyecto.bolsa.unahur.titulo"),
+    description: t("proyecto.bolsa.unahur.descripcion"),
     githubFront:
       "https://github.com/PPS-2023c2-Grupo-3/comunidad-de-trabajo-front-end",
     githubBack:
@@ -69,9 +72,8 @@ const PROYECTOS = [
     ],
   },
   {
-    title: "Equivalencias UNAHUR",
-    description:
-      "Gestor de pedidos de equivalencias para la Universidad Nacional de Hurlingham al cual se le incorporó la funcionalidad de chat para poder comunicarse con los alumnos.",
+    title: t("proyecto.chat.titulo"),
+    description: t("proyecto.chat.descripcion"),
     githubFront:
       "https://github.com/DesApp-2023c1-Grupo-3/equivalencias-front-end/tree/dev",
     githubBack:
@@ -87,18 +89,16 @@ const PROYECTOS = [
     ],
   },
   {
-    title: "Rick and Morty App",
-    description:
-      "Rick and Morty App es una aplicación web que permite visualizar información sobre la serie animada Rick and Morty. En esta encontrarás información sobre los personajes, episodios y locaciones de la famosa serie.",
+    title: t("proyecto.rick.titulo"),
+    description: t("proyecto.rick.descripcion"),
     link: "https://rick-and-morty-series-app.netlify.app/",
     github: "https://github.com/Gonzalo09/Rick-and-Morty-App",
     image: "/images/rick_and_morty.webp",
     tags: [TAGS.REACT, TAGS.MUI, TAGS.HTML, TAGS.CSS],
   },
   {
-    title: "Clima Argentina",
-    description:
-      "Aplicación web que permite visualizar las condiciones climáticas de cualquier ciudad de Argentina. Además de proporcionar datos del clima actual, como visibilidad, humedad, presión, etc, también podrás consultar el pronóstico extendido de 3 días.",
+    title: t("proyecto.clima.titulo"),
+    description: t("proyecto.clima.descripcion"),
     link: "https://clima-argentina.vercel.app/",
     github: "https://github.com/Gonzalo09/clima",
     image: "/images/clima.webp",
@@ -112,7 +112,7 @@ const PROYECTOS = [
     <h2
       class="text-left pb-16 text-4xl font-extrabold leading-tight tracking-tight text-white"
     >
-      Proyectos
+      {t("proyectos.titulo")}
     </h2>
     <div class="flex flex-col gap-y-16">
       {
@@ -169,7 +169,7 @@ const PROYECTOS = [
                       <BotonConIcono
                         href={github}
                         icon="/icons/github.svg"
-                        text="Código"
+                        text={t("proyectos.boton.codigo")}
                         loading="lazy"
                       />
                     )}

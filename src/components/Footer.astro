@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <footer
   class="max-w-screen-xl flex flex-wrap items-center justify-between p-4 mx-auto py-14"
 >
@@ -5,17 +12,18 @@
     class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
   >
     <span class="text-sm sm:text-center text-gray-400">
-      ¡Gracias por visitar mi portafolio! 🚀
+      {t("footer.texto")}
     </span>
     <a
       href="https://github.com/Gonzalo09/portfolio-2024"
       class="text-sm sm:text-center text-gray-400 hover:underline"
     >
-      Repositorio
+      {t("footer.repositorio")}
       <img
         src="/icons/github.svg"
         alt="GitHub Icon"
         class="inline-block size-5 ml-1"
+        loading="lazy"
       />
     </a>
   </div>

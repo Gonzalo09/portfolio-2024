@@ -1,9 +1,16 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section id="habilidades">
   <div class="max-w-screen-xl px-6 py-8 mx-auto lg:px-6 sm:py-12 lg:py-14">
     <h2
       class="text-left pb-16 text-4xl font-extrabold leading-tight tracking-tight text-white"
     >
-      Habilidades
+      {t("habilidades.titulo")}
     </h2>
     <div class="grid lg:grid-cols-10 auto-rows-[26rem] gap-4">
       <article
@@ -149,7 +156,7 @@
           <h2
             class="text-white text-3xl text-balance font-semibold uppercase mb-5"
           >
-            Aprendiendo
+            {t("habilidades.aprendiendo")}
           </h2>
           <div class="grid grid-cols-2 gap-8 lg:gap-12 mt-8">
             <div class="text-center text-gray-400">
@@ -203,7 +210,7 @@
           <h2
             class="text-white text-3xl text-balance font-semibold uppercase mb-5"
           >
-            Herramientas
+            {t("habilidades.herramientas")}
           </h2>
 
           <div class="grid grid-cols-3 gap-8 lg:gap-12 mt-8">

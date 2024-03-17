@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <script>
   import emailjs from "@emailjs/browser";
 
@@ -33,13 +40,12 @@
     <h2
       class="text-left pb-16 text-4xl font-extrabold leading-tight tracking-tight text-white"
     >
-      Contacto
+      {t("contacto.titulo")}
     </h2>
     <p class="text-lg text-white pb-12 text-pretty">
-      Si tenes alguna duda o sugerencia, no dudes en dejarla en el siguiente
-      formulario de contacto. Estaré encantado de leerte y responder a la mayor
-      brevedad posible. <br />También podes hacerlo directamente a mi correo
-      electrónico
+      {t("contacto.parrafo.1")}
+      <br />
+      {t("contacto.parrafo.2")}
       <a
         href="mailto:gonza.iglesias00@gmail.com"
         class="text-purple-400 hover:underline"
@@ -51,42 +57,47 @@
           <div class="w-full">
             <label
               for="remitente"
-              class="block mb-2 text-xl font-medium text-white">Nombre</label
+              class="block mb-2 text-xl font-medium text-white"
+              >{t("contacto.nombre")}</label
             >
             <input
               type="text"
               name="remitente"
               id="remitente"
               class="border text-base rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
-              placeholder="Su nombre"
+              placeholder={t("contacto.nombre.placeholder")}
               required={true}
             />
           </div>
           <div class="w-full">
             <label
               for="remitente_email"
-              class="block mb-2 text-xl font-medium text-white">Email</label
+              class="block mb-2 text-xl font-medium text-white"
             >
+              {t("contacto.email")}
+            </label>
             <input
               type="email"
               name="remitente_email"
               id="remitente_email"
               class="border text-base rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
-              placeholder="Su email"
+              placeholder={t("contacto.email.placeholder")}
               required={true}
             />
           </div>
           <div class="sm:col-span-2">
             <label
               for="mensaje"
-              class="block mb-2 text-xl font-medium text-white">Mensaje</label
+              class="block mb-2 text-xl font-medium text-white"
             >
+              {t("contacto.mensaje")}
+            </label>
             <textarea
               id="mensaje"
               name="mensaje"
               rows="8"
               class="block p-2.5 w-full text-base rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
-              placeholder="Escriba su mensaje aquí"
+              placeholder={t("contacto.mensaje.placeholder")}
               required={true}></textarea>
           </div>
         </div>
@@ -94,7 +105,7 @@
           <span
             class="bg-white/5 border border-white/10 border-gray-400 rounded-lg flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs md:text-base text-white/90 transition hover:scale-110 hover:bg-white/10"
           >
-            Enviar mensaje
+            {t("contacto.enviar")}
             <img
               class="inline-block w-6 h-6 ml-2 align-middle"
               src="/icons/enviar.svg"

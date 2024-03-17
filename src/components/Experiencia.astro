@@ -1,5 +1,9 @@
 ---
 import BotonConIcono from "../components/BotonConIcono.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="experiencia">
@@ -7,7 +11,7 @@ import BotonConIcono from "../components/BotonConIcono.astro";
     <h2
       class="text-left pb-16 text-4xl font-extrabold leading-tight tracking-tight text-white"
     >
-      Experiencia
+      {t("experiencia.titulo")}
     </h2>
     <ol class="relative border-s border-gray-700">
       <!-- <li class="mb-10 ms-6">
@@ -64,19 +68,16 @@ import BotonConIcono from "../components/BotonConIcono.astro";
           >
         </span>
         <h3 class="mb-1 text-xl font-semibold text-purple-400">
-          Desarrollador
+          {t("experiencia.unahur.puesto")}
         </h3>
         <h4 class="mb-1 text-base font-medium text-white">
           Universidad Nacional de Hurlingham
         </h4>
         <time class="block mb-2 text-sm font-normal leading-none text-gray-500">
-          Marzo, 2023 - Diciembre, 2023
+          {t("experiencia.unahur.fecha")}
         </time>
         <p class="text-base font-normal text-gray-300">
-          Participación en el desarrollo de la bolsa de trabajo de la UNAHUR.
-          Incorporación de nuevas funcionalidades, refactorización de código y
-          rediseño de la interfaz. Tecnologías utilizadas: React, MUI, Node.js,
-          Express, PostgreSQL. Metodologías ágiles.
+          {t("experiencia.unahur.descripcion")}
         </p>
       </li>
       <!-- <li class="ms-6">
